@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@rollup/plugin-eslint": "^8.0.2",
+    "eslint-config-airbnb": "^19.0.4",
     "rollup": "^2.79.1",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-serve": "^2.0.1"

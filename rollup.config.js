@@ -1,5 +1,6 @@
-import serve from 'rollup-plugin-serve'
-import livereload from 'rollup-plugin-livereload'
+import serve from 'rollup-plugin-serve';
+import livereload from 'rollup-plugin-livereload';
+import eslint from '@rollup/plugin-eslint';
 
 export default {
     input: './src/index.js',
@@ -8,7 +9,8 @@ export default {
         format: 'es'
     },
     plugins: [
-        serve('build'), // index.html should be in root of project
+        eslint(),
+        serve('build'),
         livereload(),
     ],
-}
+};
