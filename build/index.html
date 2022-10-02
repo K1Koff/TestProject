@@ -2,10 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Test Project</title>
+    <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-<h1>Test</h1>
+
+<main class="main">
+    <h1 class="mb16">Test project</h1>
+
+    <div class="flex">
+        <div class="flex flex-grow mr16">
+            <input type="text" id="" placeholder="Search..." class="flex-grow mr16">
+            <button>Search</button>
+        </div>
+
+        <select id="sortBy" class="flex-shrink0">
+            <option disabled selected>Sort by</option>
+        </select>
+    </div>
+</main>
+
 <script src="bundle.js"></script>
 </body>
 </html>
