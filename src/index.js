@@ -1,3 +1,3 @@
-import listItem from './templates/listItem';
+import { usersService } from './services/index';
 
-console.log('Main', listItem);
+console.log(usersService.users);

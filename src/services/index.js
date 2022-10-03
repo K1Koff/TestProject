@@ -1,5 +1,7 @@
-import { DataSourceService } from './DataSourceService';
 import { UsersService } from './UsersService';
+import { DataGeneratorService } from './DataGeneratorService';
+import { BreakDataService } from './BreakDataService';
 
-export const dataSourceService = new DataSourceService();
-export const usersService = new UsersService();
+const generatedData = new DataGeneratorService().generateUsersData();
+const brokenUsers = BreakDataService.breakData(generatedData);
+export const usersService = new UsersService(brokenUsers);

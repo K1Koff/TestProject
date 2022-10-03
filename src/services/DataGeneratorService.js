@@ -1,4 +1,4 @@
-import { NAMES, LAST_NAMES } from '../consts';
+import { NAMES, LAST_NAMES } from '../consts/index';
 
 export class DataGeneratorService {
     generateUsersData() {
@@ -6,7 +6,8 @@ export class DataGeneratorService {
             id: this.generateId(),
             name: this.generateName(),
             lastName: this.generateLastName(),
-            avatarId: this.generateAvatarId()
+            avatarId: this.generateAvatarId(),
+            birthDate: this.generateBirthDate()
         }));
     }
 
@@ -36,5 +37,9 @@ export class DataGeneratorService {
 
     generateAvatarId() {
         return 1;
+    }
+
+    generateBirthDate() {
+        return new Date();
     }
 }

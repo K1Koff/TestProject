@@ -4,6 +4,7 @@
     "import/prefer-default-export": "off",
     "comma-dangle": "off",
     "class-methods-use-this": "off",
-    "indent": ["error", 4]
+    "indent": ["error", 4],
+    "max-len": ["error", 150]
   }
 }
