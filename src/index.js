@@ -1,3 +1,4 @@
 import { usersService } from './services/index';
+import { App } from './views/App';
 
-console.log(usersService.users);
+new App(usersService);

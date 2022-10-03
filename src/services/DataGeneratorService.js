@@ -36,7 +36,7 @@ export class DataGeneratorService {
     }
 
     generateAvatarId() {
-        return 1;
+        return 5;
     }
 
     generateBirthDate() {
