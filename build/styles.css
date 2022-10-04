@@ -25,6 +25,10 @@ button {
     color: white;
 }
 
+select {
+    width: 175px;
+}
+
 .main {
     max-width: 1000px;
     margin: 0 auto;

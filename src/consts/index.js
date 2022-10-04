@@ -23,3 +23,9 @@ export const LAST_NAMES = [
     'Sutherland',
     'Ballard',
 ];
+
+export const SORT_BY_OPTIONS = [
+    '@G3',
+    'P0$T$',
+    'B1RTHD@T3',
+];
