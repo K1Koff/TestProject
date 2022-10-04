@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Test Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./users-table.css" />
 </head>
 <body>
 
 <main class="main">
     <h1 class="mb16">Test project</h1>
 
-    <div class="flex">
+    <div class="flex mb16">
         <input type="text" id="searchInput" placeholder="Search..." class="flex-grow mr16">
 
         <select id="sortBy" class="flex-shrink0">
@@ -18,7 +22,21 @@
         </select>
     </div>
 
-    <table id="usersTable"></table>
+    <table class="users-table">
+        <thead>
+            <tr>
+                <th>Avatar</th>
+                <th>ID</th>
+                <th class="users-table__name">Full name</th>
+                <th>Birth date</th>
+                <th>Posts count</th>
+            </tr>
+        </thead>
+
+        <tbody id="usersTable">
+
+        </tbody>
+    </table>
 </main>
 
 <script src="bundle.js"></script>

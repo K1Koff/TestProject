@@ -1,0 +1,21 @@
+.users-table {
+    border-collapse: collapse;
+}
+
+.users-table td,
+.users-table th {
+    text-align: left;
+    border: 1px solid rgba(241,245,249,0.12);
+    padding: 8px 16px;
+    white-space: nowrap;
+    min-width: 70px;
+}
+
+.users-table__image {
+    width: 40px;
+    height: 40px;
+}
+
+.users-table__name {
+    width: 100%;
+}

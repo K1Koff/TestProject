@@ -25,7 +25,7 @@ export const LAST_NAMES = [
 ];
 
 export const SORT_BY_OPTIONS = [
-    '@G3',
+    'FULL_N@M3',
     'P0$T$',
-    'B1RTHD@T3',
+    'B1RTH_D@T3',
 ];

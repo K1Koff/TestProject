@@ -27,7 +27,8 @@ export class App {
                 .replaceAll('@', 'A')
                 .replaceAll('$', 'S')
                 .replaceAll('3', 'E')
-                .replaceAll('0', 'O');
+                .replaceAll('0', 'O')
+                .replaceAll('_', ' ');
 
             return [
                 { sortBy: normalizedSortBy, order: 'asc', label: normalizedSortBy },
@@ -43,7 +44,7 @@ export class App {
         this.inputEl.addEventListener('input', debounce((event) => {
             this.filters.query = event.target.value.trim();
             this.renderUsers();
-        }, 1000));
+        }, 500));
 
         this.selectEl.addEventListener('change', () => {
             const selectedOption = this.selectEl.options[this.selectEl.selectedIndex];
@@ -60,7 +61,7 @@ export class App {
     renderUsers() {
         const users = this.usersService.orderUsers(this.filters, this.sorts);
 
-        this.usersTableEl.childNodes.forEach((el) => el.remove());
+        this.usersTableEl.innerHTML = '';
 
         users
             .map((user) => template(user.getData(), USER_LIST_ITEM_TEMPLATE))
