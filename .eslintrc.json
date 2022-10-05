@@ -1,5 +1,6 @@
 {
   "extends": "airbnb",
+  "ignorePatterns": ["build/bundle.js"],
   "rules": {
     "import/prefer-default-export": "off",
     "comma-dangle": "off",
