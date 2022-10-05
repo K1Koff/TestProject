@@ -8,7 +8,7 @@
     "dev": "npx rollup --config --watch"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dmytro Kit",
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-eslint": "^8.0.2",

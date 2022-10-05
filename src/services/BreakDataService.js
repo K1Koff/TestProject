@@ -1,5 +1,5 @@
 export class BreakDataService {
-    static breakData(users) {
+    breakData(users) {
         const brokenUsers = users.map(({
             id, name, lastName, avatarId, birthDate
         }) => {

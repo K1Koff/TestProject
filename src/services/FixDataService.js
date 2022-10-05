@@ -1,5 +1,5 @@
 export class FixDataService {
-    static fixData(brokenUsers) {
+    fixData(brokenUsers) {
         return [];
     }
 }
