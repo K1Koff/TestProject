@@ -6,8 +6,8 @@ export class UsersService {
     }
 
     orderUsers(filters, sorts) {
-        return this.users;
-        // .filter((user) => user.fullName.toLowerCase().includes(filters.query.toLowerCase()))
-        // .sort((a, b) => b.fullName.localeCompare(a.fullName));
+        return this.users
+            .filter((user) => user.fullName.toLowerCase().includes(filters.query.toLowerCase()))
+            .sort((a, b) => b.fullName.localeCompare(a.fullName));
     }
 }
