@@ -3,7 +3,7 @@ export class BreakDataService {
         const brokenUsers = users.map(({
             id, name, lastName, avatarId, birthDate
         }) => {
-            const brokenId = [':)', id.padStart(10).padEnd(20)];
+            const brokenId = ['😎', id.padStart(10).padEnd(20)];
             const brokenName = [name, name, name].join('__');
             const brokenLastName = lastName.charAt(0).toLowerCase() + lastName.slice(1).toUpperCase();
             const brokenAvatarId = { value: avatarId ** 2 };
