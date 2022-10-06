@@ -7,7 +7,7 @@ export class BreakDataService {
             const brokenName = [name, name, name].join('__');
             const brokenLastName = lastName.charAt(0).toLowerCase() + lastName.slice(1).toUpperCase();
             const brokenAvatarId = { value: avatarId ** 2 };
-            const brokenBirthDate = Math.floor(birthDate.getTime() / 1000 / 2);
+            const brokenBirthDate = Math.floor(birthDate.getTime() / 1000 / 2.25);
 
             return {
                 id: brokenId,
