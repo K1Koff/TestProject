@@ -1,13 +1,11 @@
 import { User } from '../models/User';
 
 export class UsersService {
-    constructor(users) {
-        this.users = users.map((user) => new User(user));
+    constructor(cleanedUsers) {
+        this.users = [];
     }
 
-    orderUsers(filters, sorts) {
-        return this.users
-            .filter((user) => user.fullName.toLowerCase().includes(filters.query.toLowerCase()))
-            .sort((a, b) => b.fullName.localeCompare(a.fullName));
+    manageUsers(filters, sorts) {
+        return this.users;
     }
 }

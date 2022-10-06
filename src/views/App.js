@@ -59,7 +59,8 @@ export class App {
     }
 
     renderUsers() {
-        const users = this.usersService.orderUsers(this.filters, this.sorts);
+        const orderedUsers = this.usersService.manageUsers(this.filters, this.sorts);
+        const users = Array.isArray(orderedUsers) ? orderedUsers : [];
 
         this.usersTableEl.innerHTML = '';
 
