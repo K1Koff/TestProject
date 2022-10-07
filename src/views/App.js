@@ -14,29 +14,31 @@ export class App {
         this.selectEl = window.document.getElementById('sortBy');
         this.usersTableEl = window.document.getElementById('usersTable');
 
-        this.populateSortBySelect();
+        this.renderSortBySelect();
         this.listenEvents();
         this.renderUsers();
     }
 
-    populateSortBySelect() {
-        const sb = SORT_BY_OPTIONS.flatMap((sortBy) => {
+    renderSortBySelect() {
+        this.getSortByOptionsData()
+            .map((optionData) => template(optionData, SORT_BY_SELECT_OPTION_TEMPLATE))
+            .forEach((optionsHtml) => this.selectEl.insertAdjacentHTML('beforeend', optionsHtml));
+    }
+
+    getSortByOptionsData() {
+        return SORT_BY_OPTIONS.flatMap((sortBy) => {
             const normalizedSortBy = sortBy
                 .replaceAll('1', 'I')
                 .replaceAll('@', 'A')
                 .replaceAll('$', 'S')
                 .replaceAll('3', 'E')
-                .replaceAll('0', 'O')
-                .replaceAll('_', ' ');
+                .replaceAll('0', 'O');
 
             return [
-                { sortBy: normalizedSortBy, order: 'asc', label: normalizedSortBy },
-                { sortBy: normalizedSortBy, order: 'desc', label: normalizedSortBy }
+                { sortBy: normalizedSortBy.toLowerCase().replaceAll(' ', '_'), order: 'asc', label: normalizedSortBy.toLowerCase() },
+                { sortBy: normalizedSortBy.toLowerCase().replaceAll(' ', '_'), order: 'desc', label: normalizedSortBy.toLowerCase() }
             ];
         });
-
-        const ops2 = sb.map((ops) => template(ops, SORT_BY_SELECT_OPTION_TEMPLATE));
-        ops2.forEach((op) => this.selectEl.insertAdjacentHTML('beforeend', op));
     }
 
     listenEvents() {
