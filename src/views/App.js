@@ -59,12 +59,12 @@ export class App {
 
     renderUsers() {
         const orderedUsers = this.usersService.manageUsers(this.filters, this.sorts);
-        const users = Array.isArray(orderedUsers) ? orderedUsers : [];
+        const userModels = Array.isArray(orderedUsers) ? orderedUsers : [];
 
         this.usersTableEl.innerHTML = '';
 
-        users
-            .map((user) => template(user.getData ? user.getData() : {}, USER_LIST_ITEM_TEMPLATE))
-            .forEach((op) => this.usersTableEl.insertAdjacentHTML('beforeend', op));
+        userModels
+            .map((userModel) => template(userModel.getData ? userModel.getData() : {}, USER_LIST_ITEM_TEMPLATE))
+            .forEach((optionHtml) => this.usersTableEl.insertAdjacentHTML('beforeend', optionHtml));
     }
 }
