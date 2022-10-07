@@ -1,8 +1,7 @@
-import { debounce } from '../utils/debounce';
 import { SORT_BY_OPTIONS } from '../consts/index';
 import { SORT_BY_SELECT_OPTION_TEMPLATE } from '../templates/SORT_BY_SELECT_OPTION_TEMPLATE';
 import { USER_LIST_ITEM_TEMPLATE } from '../templates/USER_LIST_ITEM_TEMPLATE';
-import { template } from '../utils/index';
+import { template, debounce } from '../utils/index';
 
 export class App {
     constructor(usersService) {
@@ -65,7 +64,7 @@ export class App {
         this.usersTableEl.innerHTML = '';
 
         users
-            .map((user) => template(user.getData(), USER_LIST_ITEM_TEMPLATE))
+            .map((user) => template(user.getData ? user.getData() : {}, USER_LIST_ITEM_TEMPLATE))
             .forEach((op) => this.usersTableEl.insertAdjacentHTML('beforeend', op));
     }
 }
