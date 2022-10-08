@@ -6,6 +6,15 @@ export class UsersService {
     }
 
     manageUsers(filters, sorts) {
-        return this.users;
+        const filteredUsers = this.filterUsers(this.users, filters);
+        return this.sortUsers(filteredUsers, sorts);
+    }
+
+    filterUsers(users, filters) {
+        return users;
+    }
+
+    sortUsers(users, sorts) {
+        return users;
     }
 }
