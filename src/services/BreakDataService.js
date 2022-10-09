@@ -14,8 +14,7 @@ export class BreakDataService {
                 name: brokenName,
                 lastName: brokenLastName,
                 avatarId: brokenAvatarId,
-                birthDate: brokenBirthDate,
-                rand: Math.random()
+                birthDate: brokenBirthDate
             };
         });
 
