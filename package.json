@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "npx rollup --config --watch",
     "lint": "npx eslint --fix .",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js App --watch"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js template --watch"
   },
   "keywords": [],
   "author": "Dmytro Kit",

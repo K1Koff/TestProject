@@ -22,7 +22,7 @@ export class App {
 
     renderSortBySelect() {
         this.getSortByOptionsData()
-            .map((optionData) => template(optionData, SORT_BY_SELECT_OPTION_TEMPLATE))
+            .map((optionData) => template(SORT_BY_SELECT_OPTION_TEMPLATE, optionData))
             .forEach((optionsHtml) => this.selectEl.insertAdjacentHTML('beforeend', optionsHtml));
     }
 
@@ -55,7 +55,7 @@ export class App {
         this.usersTableEl.innerHTML = '';
 
         userModels
-            .map((userModel) => template(userModel.getData ? userModel.getData() : {}, USER_LIST_ITEM_TEMPLATE))
+            .map((userModel) => template(USER_LIST_ITEM_TEMPLATE, userModel.getData()))
             .forEach((optionHtml) => this.usersTableEl.insertAdjacentHTML('beforeend', optionHtml));
     }
 }
