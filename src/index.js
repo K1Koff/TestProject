@@ -1,5 +1,5 @@
 import { usersService } from './services/index';
-import { App } from './views/App';
+import { App } from './view/App';
 
 const inputEl = window.document.getElementById('searchInput');
 const selectEl = window.document.getElementById('sortBy');

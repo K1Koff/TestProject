@@ -12,6 +12,7 @@
     "prefer-rest-params": "off",
     "no-useless-constructor": "off",
     "no-empty-function": "off",
+    "func-names": "off",
     "indent": ["error", 4],
     "max-len": ["error", 150]
   }
