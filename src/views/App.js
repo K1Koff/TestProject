@@ -4,15 +4,16 @@ import { USER_LIST_ITEM_TEMPLATE } from '../templates/USER_LIST_ITEM_TEMPLATE';
 import { template, debounce } from '../utils/index';
 
 export class App {
-    constructor(usersService) {
+    constructor({
+        usersService, inputEl, selectEl, usersTableEl
+    } = {}) {
         this.usersService = usersService;
+        this.inputEl = inputEl;
+        this.selectEl = selectEl;
+        this.usersTableEl = usersTableEl;
 
         this.filters = { query: '' };
         this.sorts = { sortBy: '', order: 'asc' };
-
-        this.inputEl = window.document.getElementById('searchInput');
-        this.selectEl = window.document.getElementById('sortBy');
-        this.usersTableEl = window.document.getElementById('usersTable');
 
         this.renderSortBySelect();
         this.listenEvents();
@@ -26,19 +27,7 @@ export class App {
     }
 
     getSortByOptionsData() {
-        return SORT_BY_OPTIONS.flatMap((sortBy) => {
-            const normalizedSortBy = sortBy
-                .replaceAll('1', 'I')
-                .replaceAll('@', 'A')
-                .replaceAll('$', 'S')
-                .replaceAll('3', 'E')
-                .replaceAll('0', 'O');
-
-            return [
-                { sortBy: normalizedSortBy.toLowerCase().replaceAll(' ', '_'), order: 'asc', label: normalizedSortBy.toLowerCase() },
-                { sortBy: normalizedSortBy.toLowerCase().replaceAll(' ', '_'), order: 'desc', label: normalizedSortBy.toLowerCase() }
-            ];
-        });
+        return [];
     }
 
     listenEvents() {

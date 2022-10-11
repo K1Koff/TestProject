@@ -7,17 +7,22 @@
   "scripts": {
     "dev": "npx rollup --config --watch",
     "lint": "npx eslint --fix .",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js Fix --watch"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js App --watch"
   },
   "keywords": [],
   "author": "Dmytro Kit",
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-eslint": "^8.0.2",
+    "@testing-library/jest-dom": "^5.16.5",
     "eslint-config-airbnb": "^19.0.4",
     "jest": "^29.1.2",
+    "jest-environment-jsdom": "^29.1.2",
     "rollup": "^2.79.1",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-serve": "^2.0.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   }
 }
