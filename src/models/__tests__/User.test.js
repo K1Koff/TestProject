@@ -49,7 +49,7 @@ describe('getData', () => {
         const f = (n) => (n < 10 ? `0${n}` : n);
         const formattedDate = `${f(birthDate.getDate())}/${f(birthDate.getMonth() + 1)}/${birthDate.getFullYear()}`;
 
-        expect(user.getData()).toBe({
+        expect(user.getData()).toStrictEqual({
             id: 'qwerty',
             fullName: 'Dmytro Kit',
             postsCount: 125,

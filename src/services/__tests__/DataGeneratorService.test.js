@@ -14,10 +14,10 @@ describe('generateUsersData', () => {
 
 describe('generateId', () => {
     test('Should return string', () => {
-        const usersData = createService().generateId();
+        const id = createService().generateId();
 
-        expect(typeof usersData).toBe('string');
-        expect(usersData.length).toBe(8);
+        expect(typeof id).toBe('string');
+        expect(id.length).toBe(8);
     });
 });
 

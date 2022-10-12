@@ -20,7 +20,8 @@ describe('parseUsersJson', () => {
 
 describe('fixUser', () => {
     test('Should correctly fix user\'s data', () => {
-        const birthDate = new Date();
+        const now = new Date();
+        const birthDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
 
         const user = {
             id: ['😎', '      test          '],
