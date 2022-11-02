@@ -16,7 +16,15 @@
 
     <div class="flex mb16">
         <input type="text" id="searchInput" placeholder="Search..." class="flex-grow mr16">
-
+        
+        <select id="sortByParameter" class="flex-shrink0">
+            <option disabled selected>Sort by parameter</option>
+            <option data-filter-by = 'all'> All </option>
+            <option data-filter-by = 'fullName'> Full name </option>
+            <option data-filter-by = 'iD'> ID </option>
+            <option data-filter-by = 'posts'> Posts </option>
+            <option data-filter-by = 'birthDate'> Birth date </option>
+        </select>
         <select id="sortBy" class="flex-shrink0">
             <option disabled selected>Sort by</option>
         </select>
@@ -37,6 +45,8 @@
 
         </tbody>
     </table>
+    <p id="usersShown" class="pUsersDisp"></p>
+
 </main>
 
 <script src="bundle.js"></script>

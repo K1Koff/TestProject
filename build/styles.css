@@ -50,16 +50,19 @@ select {
 
 .flex-shrink0 {
     flex-shrink: 0;
+    margin-left: 5px;
 }
 
 .mb16 {
     margin-bottom: 16px;
 }
 
-.mr16 {
-    margin-right: 16px;
-}
-
 .ml16 {
     margin-left: 16px;
+}
+
+.pUsersDisp {
+    display: flex;
+justify-content: end;
+margin-top: 15px;
 }
