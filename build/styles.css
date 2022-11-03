@@ -63,6 +63,6 @@ select {
 
 .pUsersDisp {
     display: flex;
-justify-content: end;
-margin-top: 15px;
+    justify-content: end;
+    margin-top: 15px;
 }

@@ -1,5 +1,3 @@
-/* eslint-disable no-fallthrough */
-/* eslint-disable no-nested-ternary */
 import { User } from '../models/User';
 
 export class UsersService {
@@ -64,7 +62,7 @@ export class UsersService {
         });
     }
 
-    numOfUsers() {
+    countUsers() {
         return this.users.length;
     }
 }

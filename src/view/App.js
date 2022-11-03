@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable eqeqeq */
 import { SORT_BY_OPTIONS } from '../consts/index';
 import { SORT_BY_SELECT_OPTION_TEMPLATE } from '../templates/SORT_BY_SELECT_OPTION_TEMPLATE';
 import { USER_LIST_ITEM_TEMPLATE } from '../templates/USER_LIST_ITEM_TEMPLATE';
@@ -33,12 +31,10 @@ export class App {
 
     getSortByOptionsData() {
         const opionsArray = [];
-        function addItem(array, item, ascOrDesc) {
+        function addItem(array, item, sortingOrder) {
             array.push({
-                sortBy: (item.indexOf(' ') != -1) ? (`${item.slice(0, item.indexOf(' '))
-                }_${
-                    item.slice(item.indexOf(' ') + 1)}`).toLowerCase() : item.toLowerCase(),
-                order: ascOrDesc,
+                sortBy: item.toLowerCase().replace(' ', '_'),
+                order: sortingOrder,
                 label: item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()
             });
         }
@@ -89,7 +85,7 @@ export class App {
     renderNumberOfDisplayedUsers(filteredUsers) {
         const displayedUsersCounter = {
             displayedUsers: filteredUsers.length,
-            numOfAllUsers: this.usersService.numOfUsers(this.users)
+            numOfAllUsers: this.usersService.countUsers()
         };
         const counter = template(QUANTITY_OF_USERS_DISPLAYED, displayedUsersCounter);
         this.numOfUsersDisplayed.innerHTML = counter;

@@ -1,5 +1,3 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable no-nested-ternary */
 import { NAMES, LAST_NAMES } from '../consts/index';
 
 const ID_LENGTH = 8;
@@ -8,7 +6,7 @@ const USERS_COUNT = 15;
 export class DataGeneratorService {
     generateUsersData() {
         const arrOfUsers = [];
-        for (let i = 0; i < USERS_COUNT; i++) {
+        for (let i = 0; i < USERS_COUNT; i += 1) {
             const userPersonalObj = {
                 id: this.generateId(),
                 name: this.generateName(),
@@ -23,14 +21,11 @@ export class DataGeneratorService {
 
     generateId() {
         let idString = '';
-        for (let i = 1; i <= ID_LENGTH; i++) {
+        for (let i = 1; i <= ID_LENGTH; i += 1) {
             const randNumber = Math.random();
-            idString
-            += randNumber <= 0.33
-                    ? this.generateUpperCase()
-                    : randNumber > 0.33 && randNumber <= 0.66
-                        ? this.generateLowerCase()
-                        : this.generateDigit();
+            if (randNumber <= 0.33) idString += this.generateUpperCase();
+            if (randNumber > 0.33 && randNumber <= 0.66) idString += this.generateLowerCase();
+            if (randNumber > 0.66) idString += this.generateDigit();
         }
         return idString;
     }
